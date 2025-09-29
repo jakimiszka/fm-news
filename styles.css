@@ -36,6 +36,8 @@
     --spacing-500: 40px;
     --spacing-800: 64px;
     --spacing-1100: 88px;
+
+
 }
 
 .extra-bold{font-weight: 800;}
@@ -97,8 +99,8 @@ ul{
 }
 
 .grid_content{
-    display: grid;
-    grid-template-rows:  repeat(3, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: var(--spacing-400);
     margin-top: var(--spacing-400);
 }
@@ -115,7 +117,7 @@ ul{
 }
 .new_article_img{
     width: 100%;
-    height: 100%;
+    max-height: 30%;
 }
 .new_article_card-preview{
     display: flex;
@@ -158,8 +160,15 @@ ul{
 
 /* DSKTOP */
 @media screen and (min-width: 769px) {
+    body{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
     .container{
-        max-width: 1440px;
+        max-width: 1112px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -186,14 +195,44 @@ ul{
     }
     .navbar_menu{
         display: flex;
-        gap: 32px;
     }
     .grid_content{
         display: grid;
-        grid-area:  "image image sidebar",
-                    "headline more sidebar",
-                    "article article article";
-        gap: 32px;
+        grid-template-areas:    "a a b"
+                                "a a b"
+                                "c c c";
+        
     }
-    
+    .new_article{
+        grid-area: a;
+        display: flex;
+        flex-direction: column;
+    }
+    .new_article_img {
+        content: url("./assets/images/image-web-3-desktop.jpg");
+        width: 100%;
+        height: auto;
+    }
+    .new_article_card{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: var(--spacing-300);
+    }
+    .new_article_card-preview{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+    .new_article_card-title{
+        width: 50%;
+    }
+
+    .old_articles{
+        grid-area: c;
+        display: flex;
+        flex-direction: row;
+        gap: var(--spacing-300);
+    }
+
 }
