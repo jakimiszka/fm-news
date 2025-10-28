@@ -200,7 +200,7 @@ ul{
 /* DSKTOP */
 @media screen and (min-width: 769px) {
     body{
-        height: 100vh;
+        height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -243,7 +243,6 @@ ul{
         grid-template-areas:    "a a b"
                                 "a a b"
                                 "c c c";
-
     }
 
     .sidebar{
@@ -256,19 +255,27 @@ ul{
 
     .topic{
         grid-area: a;
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-rows: minmax(220px, 1fr) auto;
+        gap: var(--spacing-300);
     }
     .topic_img {
         content: url("./assets/images/image-web-3-desktop.jpg");
         width: 100%;
-        height: auto;
+        height: 100%;
+        max-height: none;
+        display: block;
+        grid-row: 1 / 2;
+        grid-column: 1 / -1;
+        object-fit: cover;
     }
     .topic_card{
         width: 100%;
         display: flex;
         flex-direction: row;
         gap: var(--spacing-300);
+        grid-row: 2 / 3;
+        align-items: center;
     }
     .topic_card-preview{
         display: flex;
