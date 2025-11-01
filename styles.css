@@ -67,6 +67,7 @@ body {
     padding-right: 1rem;
 }
 
+/*   TODO   */
 .container::after {
     content: '';
     position: fixed;
@@ -75,9 +76,9 @@ body {
     right: 0;
     bottom: 0;
     background-color: hsla(240, 53%, 23%, 0.5);
-    opacity: 0;
+    opacity: 0.5;
     pointer-events: none;
-    visibility: hidden;
+    /* visibility: hidden; */
     transition: opacity 0.3s ease, visibility 0.3s ease;
     z-index: 1; 
 }
@@ -205,33 +206,28 @@ ul{
 
 .mobile_navbar{
     position: fixed;
-    width: 40%;
-    height: 100vh;
+    width: 60%;
+    height: 100%;
     top: 0;
     right: 0;
-    bottom: 0;
     background-color: var(--white);
     z-index: 2;
-
-    display: flex;
 }
 
 .mobile_navbar_menu{
     display: flex;
     flex-direction: column;
-    height: auto;
+    justify-content: center;
+    height: 100%;
     gap: var(--spacing-500);
     font-size: var(--font-size-20);
-
-    position: relative;
-    top: 50%;
-    left: 20%;
-    transform: translate(-50%, -50%);
+    padding-left: var(--spacing-400);
 }
 
 .mobile_navbar_close{
     position: absolute;
-    right:0;
+    top: var(--spacing-400);
+    right: var(--spacing-400);
     cursor: pointer;
 }
 
@@ -246,8 +242,6 @@ ul{
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        padding: var(--spacing-500) var(--spacing-400);
-        height: 100vh;
     }
     .navbar_menu{
         display: none;
@@ -373,6 +367,10 @@ ul{
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+    }
+
+    .mobile_navbar{
+        display: none;
     }
 
 }
