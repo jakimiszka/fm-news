@@ -67,8 +67,7 @@ body {
     padding-right: 1rem;
 }
 
-/*   TODO   */
-.container::after {
+.overlay{
     content: '';
     position: fixed;
     top: 0;
@@ -78,8 +77,7 @@ body {
     background-color: hsla(240, 53%, 23%, 0.5);
     opacity: 0.5;
     pointer-events: none;
-    /* visibility: hidden; */
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    visibility: visible;
     z-index: 1; 
 }
 
@@ -269,6 +267,10 @@ ul{
         margin-inline: auto;
         margin-inline: var(--spacing-100);
         margin-top: var(--spacing-300);
+    }
+
+    .overlay {
+        visibility: hidden;
     }
 
     .navbar{
