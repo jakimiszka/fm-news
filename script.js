@@ -1,14 +1,13 @@
-const mobileNavbar = document.querySelector('.mobile_navbar');
-const openMenuBtn = document.querySelector('.navbar_hamburger');
-const closeMenuBtn = document.querySelector('.mobile_navbar_close');
+const navbarMenu = document.querySelector('.navbar_menu');
+const hamburgerBtn = document.querySelector('.navbar_hamburger');
 const overlay = document.querySelector('.overlay');
+const hamburgerImg = hamburgerBtn.querySelector('img');
 
-// openMenuBtn.addEventListener('click', () => {
-//     mobileNavbar.style.display = 'block';
-//     overlay.style.visibility = 'visible';
-// });
+function toggleMenu() {
+    const isActive = hamburgerBtn.dataset.mobile === 'active';
+    hamburgerBtn.dataset.mobile = isActive ? 'inactive' : 'active';
+    overlay.style.visibility = isActive ? 'visible' : 'hidden';
+    navbarMenu.style.display = isActive ? 'flex' : 'none';
+}
 
-// closeMenuBtn.addEventListener('click', () => {
-//     mobileNavbar.style.display = 'none';
-//     overlay.style.visibility = 'hidden';
-// });
+hamburgerBtn.addEventListener('click', toggleMenu);

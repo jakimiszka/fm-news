@@ -38,9 +38,11 @@
     --spacing-1100: 88px;
 
     
+    [data-mobile="inactive"] {
+        --mobile-nav-img: url("./assets/images/icon-menu-close.svg");
+    }
 
-    /* settings for mobile nav */
-    [data-mode="mobile"] {
+    [data-mobile="active"] {
         --mobile-nav-img: url("./assets/images/icon-menu.svg");
     }
 
@@ -93,37 +95,12 @@ body {
     padding-inline: var(--spacing-100);
 }
 
-ul{
-    list-style: none;
+.navbar_hamburger img{
+    content: var(--mobile-nav-img);
 }
 
 .navbar_menu{
     display: none;
-}
-.navbar_hamburger{
-    display: block;
-}
-
-.navbar_hamburger{
-    display: block;
-}
-.navbar_hamburger img{
-    cursor: pointer;
-    width: 42px;
-    height: 32px;
-}
-
-/* ///////////////////////////////////////////////////////// */
-
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-inline: var(--spacing-100);
-}
-
-.navbar_menu{
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -143,17 +120,13 @@ ul{
     display: block;
     z-index: 4;
 }
-
-.navbar_hamburger{
-    display: block;
-}
 .navbar_hamburger img{
     cursor: pointer;
     width: 42px;
     height: 32px;
+    object-fit: cover;
+     z-index: 4;
 }
-
-/* ///////////////////////////////////////////////////////// */
 
 .grid_content{
     display: flex;
@@ -304,23 +277,30 @@ ul{
 
     .navbar{
         display: flex;
-    }
-    .mobile_navbar{
-        display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: var(--spacing-500) var(--spacing-800);
+        padding-inline: var(--spacing-100);
     }
-    .navbar_hamburger{
-        display: none;
-    }
-    .navbar_menu_mobile{
-        display: none;
-    }
-    .navbar_menu{
-        display: flex;
-        gap: var(--spacing-300);
-    }
+
+.navbar_menu{
+    list-style: none;
+    position: relative;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-400);
+    font-size: var(--font-size-18);
+}
+
+.navbar_hamburger{
+    display: none;
+}
+.navbar_hamburger img{
+    cursor: pointer;
+    width: 42px;
+    height: 32px;
+}
     .grid_content{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
