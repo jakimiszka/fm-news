@@ -37,6 +37,12 @@
     --spacing-800: 64px;
     --spacing-1100: 88px;
 
+    
+
+    /* settings for mobile nav */
+    [data-mode="mobile"] {
+        --mobile-nav-img: url("./assets/images/icon-menu.svg");
+    }
 
 }
 
@@ -61,7 +67,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: space-between;
-
     margin-top: var(--spacing-300);
     padding-left: 1rem;
     padding-right: 1rem;
@@ -77,7 +82,7 @@ body {
     background-color: hsla(240, 53%, 23%, 0.5);
     opacity: 0.5;
     pointer-events: none;
-    visibility: visible;
+    visibility: hidden;
     z-index: 1; 
 }
 
@@ -107,6 +112,48 @@ ul{
     width: 42px;
     height: 32px;
 }
+
+/* ///////////////////////////////////////////////////////// */
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: var(--spacing-100);
+}
+
+.navbar_menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    width: 60%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: var(--white);
+    z-index: 2;
+
+    list-style: none;
+    background-color: var(--white);
+}
+.navbar_hamburger{
+    display: block;
+    z-index: 4;
+}
+
+.navbar_hamburger{
+    display: block;
+}
+.navbar_hamburger img{
+    cursor: pointer;
+    width: 42px;
+    height: 32px;
+}
+
+/* ///////////////////////////////////////////////////////// */
 
 .grid_content{
     display: flex;
@@ -210,6 +257,7 @@ ul{
     right: 0;
     background-color: var(--white);
     z-index: 2;
+    display: none;
 }
 
 .mobile_navbar_menu{
@@ -229,25 +277,6 @@ ul{
     cursor: pointer;
 }
 
-
-/* TABLET */
-@media screen and (max-width: 768px) {
-    .navbar{
-        display: flex;
-    }
-    .mobile_navbar{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-    }
-    .navbar_menu{
-        display: none;
-    }
-    .navbar_hamburger{
-        display: block;
-    }
-}
 
 /* DSKTOP */
 @media screen and (min-width: 769px) {
