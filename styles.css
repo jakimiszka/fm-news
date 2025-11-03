@@ -31,6 +31,7 @@
     --letter-spacing-1: 4.36px;
 
     --spacing-100: 8px;
+    --spacing-200: 16px;
     --spacing-300: 24px;
     --spacing-400: 32px;
     --spacing-500: 40px;
@@ -112,10 +113,9 @@ body {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    font-size: var(--font-size-20);
     padding-left: var(--spacing-400);
-
     gap: var(--spacing-500);
-
     position: fixed;
     width: 60%;
     height: 100%;
@@ -155,6 +155,10 @@ body {
     color: white;
     background-color: black;
     padding: 1rem;
+}
+
+.sidebar h1{
+    color: var(--gold-400);
 }
 
 .new_article {
@@ -212,6 +216,7 @@ body {
 .old_articles {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     gap: var(--spacing-300);
 }
 
@@ -221,6 +226,7 @@ body {
     align-items: center;
     gap: var(--spacing-300);
     width: 100%;
+    height: 60%;
     margin-bottom: 1rem;
 }
 
@@ -235,8 +241,12 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    gap: var(--spacing-300);
+    justify-content: center;
+    gap: var(--spacing-400);
+}
+
+.old_article_desc h2{
+    color: var(--red-500);
 }
 
 .mobile_navbar {
@@ -264,6 +274,16 @@ body {
     position: absolute;
     top: var(--spacing-400);
     right: var(--spacing-400);
+    cursor: pointer;
+}
+
+.old_article_desc h3:hover{
+    color: var(--red-500);
+    cursor: pointer;
+}
+.navbar_menu li:hover,
+.sidebar h2:hover{
+    color: var(--gold-400);
     cursor: pointer;
 }
 
@@ -303,9 +323,9 @@ body {
 
     .navbar_menu {
         position: relative;
-        display: flex !important;
-        /* preserve display:flex for desktop screed size */
+        display: flex !important;   /* preserve display:flex for desktop screen size */ 
         flex-direction: row;
+        justify-content: flex-end;
         gap: var(--spacing-400);
         font-size: var(--font-size-18);
     }
@@ -375,7 +395,7 @@ body {
         grid-area: c;
         display: flex;
         flex-direction: row;
-        gap: var(--spacing-400);
+        align-items: center;
     }
 
     .old_article {
@@ -398,6 +418,7 @@ body {
         height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: center;
+        gap: var(--spacing-200);
     }
 }
